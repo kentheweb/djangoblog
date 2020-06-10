@@ -1,0 +1,10 @@
+{% extends 'blog/base.html'%} {%block body%}
+<div class="container">
+    <h6 class="text text-capitalize">{{object.title}}</h1>
+
+        <small class="text-muted">{{object.author.username}} on {{object.date_created}}</small>
+        <hr>
+        <p>{{object.post}}</p>
+  <a href="{% url 'update' post.id %}" class="btn btn-outline-success">update post</a>
+</div>
+{%endblock body%}

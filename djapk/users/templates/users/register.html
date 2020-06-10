@@ -1,0 +1,14 @@
+{%extends 'blog/base.html'%}
+{% load crispy_forms_tags %}
+{% block body %}
+<div class="container">
+    <form method='POST'>
+        {%csrf_token%}
+        <div class="form-group">
+        {{form| crispy}}
+        </div>
+        <input type="submit" value="register" class="btn btn-outline-primary">
+    </form>
+    <small>already have an account <a href="{% url 'login-route'%}">login</a></small>
+</div>
+{%endblock%}

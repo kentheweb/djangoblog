@@ -1,0 +1,33 @@
+{% extends 'blog/base.html'%} {%block body%} {% for post in page_obj%}
+<div class="container">
+    <h6 class="text text-capitalize"><a href="{% url 'each' post.id%}" class="text text-decoration-none">{{post.title}}</a></h1>
+
+        <small class="text-muted">{{post.author.username}} on {{post.date_created}}</small>
+        <hr>
+        <p>{{post.post}}</p>
+  
+</div>
+{%endfor%}
+<div class="container">
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1" class="text-decoration-none">&laquo; first</a>
+                <a href="?page={{ page_obj.previous_page_number }}" class="text-decoration-none">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}" class="text-decoration-none">next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}" class="text-decoration-none">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+</div>
+<div class="container">
+    <a href="{%url 'add-route'%}" class="btn btn-outline-primary">add post</a>
+</div>
+{%endblock body%}
