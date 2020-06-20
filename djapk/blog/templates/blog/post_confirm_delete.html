@@ -1,0 +1,9 @@
+{% extends 'blog/base.html' %}
+
+{% block body %}
+<div class="container">
+    <h6>confirm delete of your post</h6>
+    <a class="btn btn-danger" href="{% url 'delete' object.id %}"> delete</a>
+    <a class="btn btn-outline-primary" href="{% url 'home-route'%}"> home</a>
+</div>
+{% endblock body %}

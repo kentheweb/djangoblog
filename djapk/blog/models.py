@@ -16,4 +16,4 @@ class Post(models.Model):
 
 
     def get_absolute_url(self):
-        return reverse('home-route')
+        return reverse('each', kwargs={'pk': self.pk})
