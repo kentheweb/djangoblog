@@ -4,7 +4,7 @@
 
         <small class="text-muted">{{post.author.username}} on {{post.date_created|date:"F d, Y"}}</small>
         <hr>
-        <p>{{post.post}}</p>
+        <p>{{post.post|linebreaksbr }}</p>
 
 </div>
 {%endfor%}
